@@ -1,23 +1,42 @@
 # Release model
 
-This repository contains two independent public release tracks in one GitHub repository: the AiO installer and the Single Patches collection.
+This repository contains two current public release tracks: the **AiO installer** and the **Single Patches** collection.
+
+## Current release line
+
+- AiO: Nexus mod 105461, current version 1.0.1.11.
+- Single Patches: Nexus mod 105464, current version 1.0 with 12 current optional patch files.
+
+The older Nexus project 104590 is a replaced predecessor. Its files are legacy material and must not be mixed into a current release without explicit verification that the same patch was carried forward.
 
 ## Before publishing
 
 For every GitHub release, verify the exact release track, version or release identifier, filename, checksum, source artifact, release notes, licence terms, permissions, and required attribution. If any of these do not match the intended public release, stop rather than publishing a best guess.
 
-When a file is already published on Nexus Mods and is being mirrored here, use the exact verified artifact whenever possible. Do not silently rebuild, rename, repack, or modify it in a way that would make the GitHub and Nexus files appear equivalent when their contents differ.
+When mirroring an already published K2040 archive, keep the archive contents byte-for-byte unchanged. A clearer outer filename may be used for GitHub as long as the archive itself is not rebuilt or repacked.
+
+Keep the original local backup untouched. Create renamed staging copies for GitHub publication and generate public checksum files from those final asset names.
+
+## File naming
+
+Use readable release-asset names that identify the project, target weapon or variant, and version where applicable. Avoid Nexus-added download suffixes and avoid exposing local filesystem paths.
+
+Recommended patterns:
+
+- AiO: `K2040_ECO_QuickMenu_AiO_v<version>.7z`
+- Single patch: `K2040_ECO_QM_<weapon-or-variant>_v1.0.7z`
+- Checksums: `SHA256SUMS.txt`
 
 ## Release notes
 
 Each GitHub release should clearly state:
 
-- whether it is **AiO installer** or **Single Patches**;
+- whether it is **AiO installer**, **Single Patches**, or a clearly labelled historical/legacy release;
 - the release version or identifier;
 - what changed;
 - the corresponding Nexus Mods page;
 - the checksum for each K2040-published downloadable file when a checksum is provided;
-- any licence, permission, dependency, or attribution information that needs to accompany the release.
+- any dependency, permission, licence, or attribution information that needs to accompany the release.
 
 ## Official Nexus pages
 
